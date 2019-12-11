@@ -1,0 +1,24 @@
+<h1> Add a new book</h1>
+<br>
+<form action = 'add/' method = "POST">
+  {% csrf_token %}
+  Title:
+  <br>
+  <input type = "text" name = 'title'>
+  <br>
+  Subtitle:
+  <br>
+  <input type = "text" name = 'subtitle'>
+  <br>
+  Author:
+  <br>
+  <input type = "text" name = 'author'>
+  <br>
+  ISBN:
+  <br>
+  <input type = "text" name = 'isbn'>
+  <br>
+<input type = "submit" name ="addbook" value=" Add Book">
+
+<input type = "submit" name ="rembook" value=" Remove Book">
+</form>

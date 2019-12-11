@@ -1,0 +1,18 @@
+<h1> Edit a book</h1>
+<br>
+<form action ="{% url 'ubook' book.title %}" method = "POST">
+  {% csrf_token %}
+  Subtitle:
+  <br>
+  <input type = "text" name = 'subtitle'>
+  <br>
+  Author:
+  <br>
+  <input type = "text" name = 'author'>
+  <br>
+  ISBN:
+  <br>
+  <input type = "text" name = 'isbn'>
+  <br>
+  <button type = "submit"> Update details</button>
+</form>

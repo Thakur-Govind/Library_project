@@ -1,0 +1,9 @@
+<h2> Details of Book: {{model.title}}</h2>
+<ul>
+<li>Subtitle: {{ model.subtitle }}</li>
+<li>Author: {{ model.author }}</li>
+<li>ISBN: {{ model.isbn }}</li>
+</ul>
+<br>
+<br>
+<a href = {% url 'update' model.title %}> Update details</a>
