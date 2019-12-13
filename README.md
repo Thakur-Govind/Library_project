@@ -11,5 +11,7 @@ http://localhost:8000/api/users/ -- Displays all the users
 http://localhost:8000/api/users/<int> -- Displays details of each user. Like in Books, CRUD happens for users as well <int to be replaced>
 Also, a login/logout at the very top. One needs to Log in, to see any of the stuff. You may log in as the superuser, so create one by CMD:
 >>python manage.py createsuperuser
+
+
 and then, enter the details it asks.
 Hope you like this project! It still needs a little bit work on a section, but that is independent of the working of the project.
