@@ -31,15 +31,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'books.apps.BooksConfig',
-    'rest_framework',
-    'api.apps.ApiConfig',
+    'books.apps.BooksConfig',#html templates version
+
+    'rest_framework',#framework
+
+    'rest_framework.authtoken',#Token Authorization
+
+    'allauth',# Django Allauth apps
+    'allauth.account',#same as above
+    'allauth.socialaccount',
+
+    'rest_auth',#Third Party App for endpoint creation
+    'rest_auth.registration',
+
+    'api.apps.ApiConfig',#templates version
+    #The usual ones below:
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',# Django Allauth cites
 ]
 
 MIDDLEWARE = [
@@ -51,7 +64,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.SessionAuthentication', #sesion authentication, may or may not be used
+    'rest_framework.authentication.TokenAuthentication' #token authentication
+    ]
+}
 ROOT_URLCONF = 'lib_proj.urls'
 
 TEMPLATES = [
@@ -72,6 +93,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lib_proj.wsgi.application'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #Email backends
+SITE_ID = 1 #note
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

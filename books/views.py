@@ -25,6 +25,7 @@ class BookListView(ListView):
     else:
         message = "Login failed, please try again"
         return render(request, 'books/login.html', {'mess':message})"""
+
 def addbook(request):
     if 'addbook' in request.POST:
         n_b = models.Book()

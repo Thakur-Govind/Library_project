@@ -18,6 +18,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('books.urls')),
-    path('api/',include('api.urls')),
+    path('', include('books.urls')),#HTML templates
+    path('api/',include('api.urls')),#APIs
+    path('api-auth', include('rest_framework.urls')), #DRF Authentication
+    path('api/rest-auth/', include('rest_auth.urls')), #REST authentication using the third party app. Provides
+    # login, logout, paswrd change, passwrod change confirmation
+    path('api/rest-auth/registration/', include('rest_auth.registration.urls')),#Registration urls for the third part app
+
 ]
